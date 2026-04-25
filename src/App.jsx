@@ -1,10 +1,10 @@
-import CepForm from './components/CepForm';
-import CepResult from './components/CepResult';
+import DogForm from './components/DogForm';
+import DogResult from './components/DogResult';
 import ErrorMessage from './components/ErrorMessage';
-import { useCepContext } from './contexts/CepContext';
+import { useDogContext } from './contexts/DogContext';
 
 export default function App() {
-  const { loading } = useCepContext();
+  const { loading } = useDogContext();
 
   const pageStyle = {
     minHeight: '100vh',
@@ -49,12 +49,12 @@ export default function App() {
   return (
     <main style={pageStyle}>
       <section style={cardStyle}>
-        <h1 style={titleStyle}>Consulta de CEP</h1>
-        <p style={subtitleStyle}>Digite um CEP com 8 números para consultar os dados na API ViaCEP.</p>
-        <CepForm />
+        <h1 style={titleStyle}>Busca Dog CEO</h1>
+        <p style={subtitleStyle}>Digite uma raca para buscar uma imagem aleatoria na API Dog CEO.</p>
+        <DogForm />
         {loading ? <div style={statusStyle}>Carregando...</div> : null}
         <ErrorMessage />
-        <CepResult />
+        <DogResult />
       </section>
     </main>
   );

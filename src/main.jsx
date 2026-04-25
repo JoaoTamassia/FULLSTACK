@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { CepProvider } from './contexts/CepContext';
+import { DogProvider } from './contexts/DogContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CepProvider>
+    <DogProvider>
       <App />
-    </CepProvider>
+    </DogProvider>
   </React.StrictMode>
 );

@@ -1,20 +1,20 @@
 import { useForm } from 'react-hook-form';
-import { useCepContext } from '../contexts/CepContext';
+import { useDogContext } from '../contexts/DogContext';
 
-export default function CepForm() {
-  const { searchCep } = useCepContext();
+export default function DogForm() {
+  const { searchBreedImage } = useDogContext();
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm({
     defaultValues: {
-      cep: ''
+      breed: ''
     }
   });
 
-  function onSubmit({ cep }) {
-    searchCep(cep);
+  function onSubmit({ breed }) {
+    searchBreedImage(breed);
   }
 
   const formStyle = {
@@ -57,26 +57,25 @@ export default function CepForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
       <label style={labelStyle}>
-        CEP
+        <span>Raca</span>
         <input
           type="text"
-          inputMode="numeric"
-          maxLength={8}
-          placeholder="Digite 8 números"
+          inputMode="text"
+          placeholder="Ex.: husky"
           style={inputStyle}
-          {...register('cep', {
-            required: 'O CEP é obrigatório.',
+          {...register('breed', {
+            required: 'A raca e obrigatoria.',
             pattern: {
-              value: /^\d{8}$/,
-              message: 'O CEP deve conter exatamente 8 números.'
+              value: /^[a-zA-Z-]+(\/[a-zA-Z-]+)?$/,
+              message: 'Use apenas letras, hifen e barra para sub-raca.'
             },
             onChange: (event) => {
-              event.target.value = event.target.value.replace(/\D/g, '').slice(0, 8);
+              event.target.value = event.target.value.replaceAll(/[^a-zA-Z/-]/g, '').toLowerCase();
             }
           })}
         />
       </label>
-      {errors.cep ? <p style={errorStyle}>{errors.cep.message}</p> : null}
+      {errors.breed ? <p style={errorStyle}>{errors.breed.message}</p> : null}
       <button type="submit" style={buttonStyle}>Consultar</button>
     </form>
   );

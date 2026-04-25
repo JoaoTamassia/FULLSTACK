@@ -1,7 +1,7 @@
-import { useCepContext } from '../contexts/CepContext';
+import { useDogContext } from '../contexts/DogContext';
 
 export default function ErrorMessage() {
-  const { error } = useCepContext();
+  const { error } = useDogContext();
 
   if (!error) {
     return null;
