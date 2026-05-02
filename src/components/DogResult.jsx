@@ -9,7 +9,7 @@ export default function DogResult() {
 
   return (
     <section className="dog-result">
-      <p className="dog-result__row"><strong>Raca:</strong> <span>{data.breed}</span></p>
+      <p className="dog-result__row"><strong>Raça:</strong> <span>{data.breed}</span></p>
       <img src={data.imageUrl} alt={data.breed} className="dog-result__image" />
     </section>
   );

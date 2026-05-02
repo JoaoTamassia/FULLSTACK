@@ -20,17 +20,17 @@ export default function DogForm() {
   return (
     <form className="dog-form" onSubmit={handleSubmit(onSubmit)}>
       <label className="dog-form__label">
-        <span>Raca</span>
+        <span>Raça</span>
         <input
           type="text"
           inputMode="text"
           className="dog-form__input"
           placeholder="Ex.: husky"
           {...register('breed', {
-            required: 'A raca e obrigatoria.',
+            required: 'A raça é obrigatória.',
             pattern: {
               value: /^[a-zA-Z-]+(\/[a-zA-Z-]+)?$/,
-              message: 'Use apenas letras, hifen e barra para sub-raca.'
+              message: 'Use apenas letras, hífen e barra para sub-raça.'
             },
             onChange: (event) => {
               event.target.value = event.target.value.replaceAll(/[^a-zA-Z/-]/g, '').toLowerCase();
