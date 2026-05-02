@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useDogContext } from '../contexts/DogContext';
 
 export default function DogForm() {
-  const { searchBreedImage, loading } = useDogContext();
+  const { searchBreedImage, loading, breeds, breedsError } = useDogContext();
   const {
     register,
     handleSubmit,
@@ -17,18 +17,27 @@ export default function DogForm() {
     searchBreedImage(breed);
   }
 
+  const describedBy = ['texto-ajuda-api', breedsError ? 'erro-lista-racas' : null]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <form className="dog-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+      {breedsError ? (
+        <p id="erro-lista-racas" className="dog-form__warning">
+          {breedsError} Dá para continuar digitando o nome da raça no campo abaixo.
+        </p>
+      ) : null}
       <label className="dog-form__label" htmlFor="campo-raca">
         <span>Raça</span>
         <input
           id="campo-raca"
           type="text"
           inputMode="text"
-          className="dog-form__input"
           autoComplete="off"
           placeholder="Ex.: husky"
-          aria-describedby="texto-ajuda-api"
+          list={breeds.length > 0 ? 'lista-racas-dogceo' : undefined}
+          aria-describedby={describedBy}
           disabled={loading}
           className="dog-form__input"
           {...register('breed', {
@@ -43,6 +52,13 @@ export default function DogForm() {
           })}
         />
       </label>
+      {breeds.length > 0 ? (
+        <datalist id="lista-racas-dogceo">
+          {breeds.map((b) => (
+            <option key={b} value={b} />
+          ))}
+        </datalist>
+      ) : null}
       {errors.breed ? <p className="dog-form__field-error">{errors.breed.message}</p> : null}
       <button type="submit" className="dog-form__submit" disabled={loading}>
         {loading ? 'Buscando…' : 'Consultar'}
