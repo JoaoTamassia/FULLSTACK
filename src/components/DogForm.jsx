@@ -17,52 +17,15 @@ export default function DogForm() {
     searchBreedImage(breed);
   }
 
-  const formStyle = {
-    display: 'grid',
-    gap: '12px'
-  };
-
-  const labelStyle = {
-    display: 'grid',
-    gap: '6px',
-    fontWeight: 700
-  };
-
-  const inputStyle = {
-    width: '100%',
-    padding: '12px 14px',
-    border: '1px solid #cbd5e1',
-    borderRadius: '8px',
-    fontSize: '16px',
-    outline: 'none'
-  };
-
-  const buttonStyle = {
-    padding: '12px 16px',
-    border: 'none',
-    borderRadius: '8px',
-    background: '#111827',
-    color: '#ffffff',
-    fontSize: '16px',
-    fontWeight: 700,
-    cursor: 'pointer'
-  };
-
-  const errorStyle = {
-    margin: 0,
-    color: '#b91c1c',
-    fontSize: '14px'
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
-      <label style={labelStyle}>
+    <form className="dog-form" onSubmit={handleSubmit(onSubmit)}>
+      <label className="dog-form__label">
         <span>Raca</span>
         <input
           type="text"
           inputMode="text"
+          className="dog-form__input"
           placeholder="Ex.: husky"
-          style={inputStyle}
           {...register('breed', {
             required: 'A raca e obrigatoria.',
             pattern: {
@@ -75,8 +38,8 @@ export default function DogForm() {
           })}
         />
       </label>
-      {errors.breed ? <p style={errorStyle}>{errors.breed.message}</p> : null}
-      <button type="submit" style={buttonStyle}>Consultar</button>
+      {errors.breed ? <p className="dog-form__field-error">{errors.breed.message}</p> : null}
+      <button type="submit" className="dog-form__submit">Consultar</button>
     </form>
   );
 }

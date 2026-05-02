@@ -1,0 +1,108 @@
+.app-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f4f6f8;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+.app-card {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1px solid #dbe3ea;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.app-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.app-subtitle {
+  margin: 0 0 20px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.app-loading {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #eef2f7;
+  color: #374151;
+}
+
+.dog-form {
+  display: grid;
+  gap: 12px;
+}
+
+.dog-form__label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.dog-form__input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.dog-form__submit {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dog-form__field-error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.dog-result {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ea;
+  display: grid;
+  gap: 8px;
+}
+
+.dog-result__row {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dog-result__image {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #dbe3ea;
+}
+
+.error-banner {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
