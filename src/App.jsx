@@ -10,7 +10,6 @@ export default function App() {
     <main className="app-page">
       <section className="app-card">
         <h1 className="app-title">Busca Dog CEO</h1>
-        <p style={subtitleStyle}>Digite uma raça para buscar uma imagem aleatória na API Dog CEO.</p>
         <p className="app-subtitle">Digite uma raça para buscar uma imagem aleatória na API Dog CEO.</p>
         <DogForm />
         {loading ? <div className="app-loading">Carregando...</div> : null}
