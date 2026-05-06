@@ -86,6 +86,13 @@
   font-size: 14px;
 }
 
+.dog-form__warning {
+  margin: 0;
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.4;
+}
+
 .dog-result {
   margin-top: 16px;
   padding: 16px;
