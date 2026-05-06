@@ -51,7 +51,7 @@ export function DogProvider({ children }) {
       const data = await response.json();
 
       if (!response.ok || data.status !== 'success') {
-        dispatch({ type: 'FETCH_ERROR', payload: 'Raca nao encontrada.' });
+        dispatch({ type: 'FETCH_ERROR', payload: 'Raça não encontrada.' });
         return;
       }
 
@@ -63,7 +63,7 @@ export function DogProvider({ children }) {
         }
       });
     } catch {
-      dispatch({ type: 'FETCH_ERROR', payload: 'Nao foi possivel consultar a API Dog CEO.' });
+      dispatch({ type: 'FETCH_ERROR', payload: 'Não foi possível consultar a API Dog CEO.' });
     }
   }, []);
 
