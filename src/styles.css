@@ -30,6 +30,17 @@
   line-height: 1.5;
 }
 
+.app-hint {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .app-loading {
   margin-top: 16px;
   padding: 12px 14px;
